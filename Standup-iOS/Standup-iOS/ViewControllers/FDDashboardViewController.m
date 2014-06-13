@@ -9,6 +9,7 @@
 #import "FDDashboardViewController.h"
 #import "FDStandupTableViewController.h"
 #import <UIImageView+AFNetworking.h>
+#import "FDUserCollectionViewCell.h"
 
 @interface FDDashboardViewController ()
 @end
@@ -84,12 +85,17 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FDUserCollectionCell" forIndexPath:indexPath];
+    FDUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FDUserCollectionCell" forIndexPath:indexPath];
     
     UIImageView *imageView = [[UIImageView alloc] init];
     [imageView setImageWithURL:[NSURL URLWithString:images[indexPath.row]] placeholderImage:[UIImage imageNamed:@"NotificationBackgroundSuccess.png"]];
     
     cell.backgroundView = imageView;
+    cell.timeLabel.text = [NSString stringWithFormat:@"08:0%lu", indexPath.row + 1];
+    cell.nameLabel.text = [NSString stringWithFormat:@"Josefin #%lu", indexPath.row + 1];
+    UIColor *trancperantBlack = [UIColor colorWithWhite:0 alpha:0.4];
+    cell.timeLabel.backgroundColor = trancperantBlack;
+    cell.nameLabel.backgroundColor = trancperantBlack;
     
     return cell;
 }

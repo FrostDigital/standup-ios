@@ -7,12 +7,18 @@
 //
 
 #import "FDStandupTableViewController.h"
+#import "FDOthersTodoTableViewCell.h"
 
 @interface FDStandupTableViewController ()
 
 @end
 
 @implementation FDStandupTableViewController
+{
+    NSArray *todayToDos;
+    NSArray *yesterdayToDos;
+    NSDictionary *standUps;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +33,12 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.title = _isMyStandup ? @"My Standup" : @"Other's Standup";
+    
+    todayToDos = @[@"Make coffee", @"Code a standapp"];
+    yesterdayToDos = @[@"Code Easyhunt", @"Meeting with Malin from Sundare Barn"];
+    
+    standUps = @{@"today": todayToDos, @"yesterday": yesterdayToDos};
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,39 +51,61 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [[standUps allValues] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[[standUps allValues] objectAtIndex:section] count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    if (_isMyStandup)
+    {
+        FDMyTodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FDMyTodoTableViewCell" forIndexPath:indexPath];
+        
+        cell.delegate = self;
+        
+        cell.todoLabel.text = [[[standUps allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        [cell.checkButton setImage:[UIImage imageNamed:@"Checkbox Empty"] forState:UIControlStateNormal];
+        
+        return cell;
+    }
     
-    // Configure the cell...
+    FDOthersTodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FDOthersTodoTableViewCell" forIndexPath:indexPath];
+    
+    cell.todoLabel.text = [[[standUps allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.imageView.image = indexPath.row % 2 == 0 ? [UIImage imageNamed:@"Check Mark"] : [UIImage imageNamed:@"Dot Mark"];
     
     return cell;
 }
-*/
 
-/*
+#pragma mark - Table view delegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return @"TODAY";
+    }
+    
+    return @"YESTERDAY";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -87,33 +116,25 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    
 }
-*/
 
-/*
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
 
-/*
-#pragma mark - Navigation
+#pragma mark - FDMyTodoTableViewCellCheckButtonDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)checkButtonTappedInCell:(FDMyTodoTableViewCell *)cell
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [cell.checkButton setImage:[UIImage imageNamed:@"Checkbox Done"] forState:UIControlStateNormal];
 }
-*/
 
 @end

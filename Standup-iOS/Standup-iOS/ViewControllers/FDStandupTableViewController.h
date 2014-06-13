@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FDMyTodoTableViewCell.h"
 
-@interface FDStandupTableViewController : UITableViewController
+@interface FDStandupTableViewController : UITableViewController <FDMyTodoTableViewCellCheckButtonDelegate>
 
 @property (nonatomic) BOOL isMyStandup;
 

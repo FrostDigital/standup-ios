@@ -29,6 +29,9 @@
 		22A354C0194B2D8400732E53 /* mockTeam.json in Resources */ = {isa = PBXBuildFile; fileRef = 22A354BF194B2D8400732E53 /* mockTeam.json */; };
 		56D7E5B6830E4C618623ACFF /* libPods-Standup-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */; };
 		626DFAC130FA46FEA48C9AF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A30D882175455EBC2C4AEC /* libPods.a */; };
+		9A75FFD7194B43310036EE88 /* FDUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFD6194B43310036EE88 /* FDUserCollectionViewCell.m */; };
+		9A75FFDA194B4A7C0036EE88 /* FDMyTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFD9194B4A7C0036EE88 /* FDMyTodoTableViewCell.m */; };
+		9A75FFDD194B4A950036EE88 /* FDOthersTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFDC194B4A950036EE88 /* FDOthersTodoTableViewCell.m */; };
 		9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78CE194B064700E079F0 /* FDLoginViewController.m */; };
 		9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78D1194B06A500E079F0 /* FDDashboardViewController.m */; };
 		9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */; };
@@ -77,6 +80,12 @@
 		22A354BD194B29C700732E53 /* FDStandupUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStandupUser.m; sourceTree = "<group>"; };
 		22A354BF194B2D8400732E53 /* mockTeam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockTeam.json; sourceTree = "<group>"; };
 		84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Standup-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A75FFD5194B43310036EE88 /* FDUserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDUserCollectionViewCell.h; path = ViewControllers/FDUserCollectionViewCell.h; sourceTree = "<group>"; };
+		9A75FFD6194B43310036EE88 /* FDUserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDUserCollectionViewCell.m; path = ViewControllers/FDUserCollectionViewCell.m; sourceTree = "<group>"; };
+		9A75FFD8194B4A7C0036EE88 /* FDMyTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDMyTodoTableViewCell.h; path = ViewControllers/FDMyTodoTableViewCell.h; sourceTree = "<group>"; };
+		9A75FFD9194B4A7C0036EE88 /* FDMyTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDMyTodoTableViewCell.m; path = ViewControllers/FDMyTodoTableViewCell.m; sourceTree = "<group>"; };
+		9A75FFDB194B4A950036EE88 /* FDOthersTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDOthersTodoTableViewCell.h; path = ViewControllers/FDOthersTodoTableViewCell.h; sourceTree = "<group>"; };
+		9A75FFDC194B4A950036EE88 /* FDOthersTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDOthersTodoTableViewCell.m; path = ViewControllers/FDOthersTodoTableViewCell.m; sourceTree = "<group>"; };
 		9ABE78CD194B064700E079F0 /* FDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLoginViewController.h; path = ViewControllers/FDLoginViewController.h; sourceTree = "<group>"; };
 		9ABE78CE194B064700E079F0 /* FDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLoginViewController.m; path = ViewControllers/FDLoginViewController.m; sourceTree = "<group>"; };
 		9ABE78D0194B06A500E079F0 /* FDDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDashboardViewController.h; path = ViewControllers/FDDashboardViewController.h; sourceTree = "<group>"; };
@@ -223,17 +232,71 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		9ABE78D9194B06FD00E079F0 /* View Controllers */ = {
+		9A75FFDE194B53F30036EE88 /* Standup */ = {
+			isa = PBXGroup;
+			children = (
+				9ABE78D3194B06C700E079F0 /* FDStandupTableViewController.h */,
+				9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */,
+				9A75FFDF194B53FB0036EE88 /* Cells */,
+			);
+			name = Standup;
+			sourceTree = "<group>";
+		};
+		9A75FFDF194B53FB0036EE88 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A75FFD8194B4A7C0036EE88 /* FDMyTodoTableViewCell.h */,
+				9A75FFD9194B4A7C0036EE88 /* FDMyTodoTableViewCell.m */,
+				9A75FFDB194B4A950036EE88 /* FDOthersTodoTableViewCell.h */,
+				9A75FFDC194B4A950036EE88 /* FDOthersTodoTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9A75FFE0194B540B0036EE88 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				9ABE78D0194B06A500E079F0 /* FDDashboardViewController.h */,
+				9ABE78D1194B06A500E079F0 /* FDDashboardViewController.m */,
+				9A75FFE1194B54150036EE88 /* Cells */,
+			);
+			name = DashBoard;
+			sourceTree = "<group>";
+		};
+		9A75FFE1194B54150036EE88 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9A75FFD5194B43310036EE88 /* FDUserCollectionViewCell.h */,
+				9A75FFD6194B43310036EE88 /* FDUserCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9A75FFE2194B541E0036EE88 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9ABE78CD194B064700E079F0 /* FDLoginViewController.h */,
+				9ABE78CE194B064700E079F0 /* FDLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9A75FFE3194B54250036EE88 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				9ABE78D6194B06E200E079F0 /* FDSettingsTableViewController.h */,
 				9ABE78D7194B06E200E079F0 /* FDSettingsTableViewController.m */,
-				9ABE78D3194B06C700E079F0 /* FDStandupTableViewController.h */,
-				9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */,
-				9ABE78D0194B06A500E079F0 /* FDDashboardViewController.h */,
-				9ABE78D1194B06A500E079F0 /* FDDashboardViewController.m */,
-				9ABE78CD194B064700E079F0 /* FDLoginViewController.h */,
-				9ABE78CE194B064700E079F0 /* FDLoginViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		9ABE78D9194B06FD00E079F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A75FFE2194B541E0036EE88 /* Login */,
+				9A75FFE0194B540B0036EE88 /* DashBoard */,
+				9A75FFDE194B53F30036EE88 /* Standup */,
+				9A75FFE3194B54250036EE88 /* Settings */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -407,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A75FFDD194B4A950036EE88 /* FDOthersTodoTableViewCell.m in Sources */,
 				2290296C194B0A6700D249F7 /* FDTeam.m in Sources */,
 				9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */,
 				22A354BB194B296C00732E53 /* FDTodoItem.m in Sources */,
@@ -417,8 +481,10 @@
 				9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */,
 				9ABE78D8194B06E200E079F0 /* FDSettingsTableViewController.m in Sources */,
 				9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */,
+				9A75FFD7194B43310036EE88 /* FDUserCollectionViewCell.m in Sources */,
 				22A354BE194B29C700732E53 /* FDStandupUser.m in Sources */,
 				22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */,
+				9A75FFDA194B4A7C0036EE88 /* FDMyTodoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
