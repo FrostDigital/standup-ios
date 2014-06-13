@@ -64,7 +64,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     //Currently hardcoded with Joels userId
     NSString* deviceToken = [FDAppDelegate extractDeviceTokenFrom:_deviceToken];
     DDLogDebug(@"%s: APN device token: %@", __FUNCTION__, deviceToken);
-    [[FDAPIClient sharedInstance] registerForPushNotificationsWithDeviceToken:deviceToken userid:@"45cd0a3e-214a-43d8-9d84-eaacf78e9bcd"];
+    [[FDAPIClient sharedInstance] registerForPushNotificationsWithDeviceToken:deviceToken userId:@"45cd0a3e-214a-43d8-9d84-eaacf78e9bcd"];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

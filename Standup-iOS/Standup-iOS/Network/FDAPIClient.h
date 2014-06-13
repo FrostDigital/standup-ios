@@ -12,6 +12,6 @@
 
 + (instancetype) sharedInstance;
 
-- (void) registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userid:(NSString *)userId;
+- (void)registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userId:(NSString *)userId;
 
 @end

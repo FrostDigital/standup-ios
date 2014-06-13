@@ -50,7 +50,7 @@ static FDAPIClient *instance = nil;
     return self;
 }
 
-- (void) registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userid:(NSString *)userId {
+- (void)registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userId:(NSString *)userId {
 
     [_manager POST:PUSH_REGISTRATION_URL
         parameters:@{kDeviceId: deviceToken, kUserId: userId, kDeviceType: kDeviceTypeiOS}
