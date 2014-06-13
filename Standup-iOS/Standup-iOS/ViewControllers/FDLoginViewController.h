@@ -10,4 +10,6 @@
 
 @interface FDLoginViewController : UIViewController
 
+- (IBAction)login:(id)sender;
+
 @end

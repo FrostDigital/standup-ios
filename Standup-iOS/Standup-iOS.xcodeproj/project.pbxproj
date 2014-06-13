@@ -77,6 +77,7 @@
 		9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStandupTableViewController.m; path = ViewControllers/FDStandupTableViewController.m; sourceTree = "<group>"; };
 		9ABE78D6194B06E200E079F0 /* FDSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDSettingsTableViewController.h; path = ViewControllers/FDSettingsTableViewController.h; sourceTree = "<group>"; };
 		9ABE78D7194B06E200E079F0 /* FDSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDSettingsTableViewController.m; path = ViewControllers/FDSettingsTableViewController.m; sourceTree = "<group>"; };
+		9ABE78DE194B102900E079F0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		A10ADCF75AB744398CB8108F /* Pods-Standup-iOSTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup-iOSTests.xcconfig"; path = "Pods/Pods-Standup-iOSTests.xcconfig"; sourceTree = "<group>"; };
 		AD780EC4DF2A430EAD42DB6D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B5A30D882175455EBC2C4AEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +165,7 @@
 				22527D8F194AFBA0009B989B /* InfoPlist.strings */,
 				22527D92194AFBA0009B989B /* main.m */,
 				22527D94194AFBA0009B989B /* Standup-iOS-Prefix.pch */,
+				9ABE78DE194B102900E079F0 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
