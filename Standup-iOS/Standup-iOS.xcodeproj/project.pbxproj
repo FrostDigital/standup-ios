@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22313DC1194B634100DD11E9 /* FDStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22313DC0194B634100DD11E9 /* FDStringUtils.m */; };
 		22527D87194AFBA0009B989B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D86194AFBA0009B989B /* Foundation.framework */; };
 		22527D89194AFBA0009B989B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D88194AFBA0009B989B /* CoreGraphics.framework */; };
 		22527D8B194AFBA0009B989B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D8A194AFBA0009B989B /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22313DBF194B634100DD11E9 /* FDStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStringUtils.h; sourceTree = "<group>"; };
+		22313DC0194B634100DD11E9 /* FDStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStringUtils.m; sourceTree = "<group>"; };
 		22527D83194AFBA0009B989B /* Standup-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Standup-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22527D86194AFBA0009B989B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22527D88194AFBA0009B989B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22313DBE194B62EA00DD11E9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				22313DBF194B634100DD11E9 /* FDStringUtils.h */,
+				22313DC0194B634100DD11E9 /* FDStringUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		22527D7A194AFBA0009B989B = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 				9ABE78D9194B06FD00E079F0 /* View Controllers */,
 				2290296D194B0A7500D249F7 /* Models */,
 				22902974194B0B8600D249F7 /* Network */,
+				22313DBE194B62EA00DD11E9 /* Utils */,
 				22527D9E194AFBA0009B989B /* Images.xcassets */,
 				22527D8D194AFBA0009B989B /* Supporting Files */,
 			);
@@ -482,6 +495,7 @@
 				9ABE78D8194B06E200E079F0 /* FDSettingsTableViewController.m in Sources */,
 				9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */,
 				9A75FFD7194B43310036EE88 /* FDUserCollectionViewCell.m in Sources */,
+				22313DC1194B634100DD11E9 /* FDStringUtils.m in Sources */,
 				22A354BE194B29C700732E53 /* FDStandupUser.m in Sources */,
 				22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */,
 				9A75FFDA194B4A7C0036EE88 /* FDMyTodoTableViewCell.m in Sources */,

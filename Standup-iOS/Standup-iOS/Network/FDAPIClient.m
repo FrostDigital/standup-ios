@@ -8,7 +8,6 @@
 
 #import "FDAPIClient.h"
 #import "AFNetworking.h"
-#import "UIImageView+AFNetworking.h"
 
 #define BASE_URL @"http://frost-standup-push.herokuapp.com"
 
@@ -17,8 +16,6 @@
 #define kUserId @"userId"
 #define kDeviceType @"deviceType"
 #define kDeviceTypeiOS @"ios"
-
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface FDAPIClient()
 

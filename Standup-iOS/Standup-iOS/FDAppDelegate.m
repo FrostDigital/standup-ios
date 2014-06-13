@@ -11,8 +11,7 @@
 #import "AHAlertView.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
-
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#import "FDStringUtils.h"
 
 @implementation FDAppDelegate
 
@@ -62,7 +61,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)_deviceToken {
     //Currently hardcoded with Joels userId
-    NSString* deviceToken = [FDAppDelegate extractDeviceTokenFrom:_deviceToken];
+    NSString* deviceToken = [FDStringUtils extractDeviceTokenFrom:_deviceToken];
     DDLogDebug(@"%s: APN device token: %@", __FUNCTION__, deviceToken);
     [[FDAPIClient sharedInstance] registerForPushNotificationsWithDeviceToken:deviceToken userId:@"45cd0a3e-214a-43d8-9d84-eaacf78e9bcd"];
 }
@@ -85,18 +84,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 
 #pragma mark - UTILS
-
-+(NSString*) extractDeviceTokenFrom:(NSData*)data {
-
-    if(data != nil) {
-        return [[[[data description]
-            stringByReplacingOccurrencesOfString: @"<" withString: @""]
-            stringByReplacingOccurrencesOfString: @">" withString: @""]
-            stringByReplacingOccurrencesOfString: @" " withString: @""];
-    }
-
-    return nil;
-}
 
 - (void) initLogger {
     [DDLog addLogger:[DDASLLogger sharedInstance]];
