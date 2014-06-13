@@ -10,4 +10,8 @@
 
 @interface FDAPIClient : NSObject
 
++ (instancetype) sharedInstance;
+
+- (void) registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userid:(NSString *)userId;
+
 @end
