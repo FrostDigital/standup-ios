@@ -12,9 +12,7 @@
 
 - (void)awakeFromNib
 {
-    UIColor *trancperantBlack = [UIColor colorWithWhite:0 alpha:0.4];
-    _timeLabel.backgroundColor = trancperantBlack;
-    _nameLabel.backgroundColor = trancperantBlack;
+
 }
 
 @end

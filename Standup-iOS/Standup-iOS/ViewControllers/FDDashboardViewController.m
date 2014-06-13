@@ -25,6 +25,7 @@
     //    NSArray *images;
     
     FDTeam *team;
+    NSDate *selectedDate;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,6 +42,7 @@
     [super viewDidLoad];
     
     team = [[FDTeamStorage sharedStorage] activeTeam];
+    selectedDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,8 +98,9 @@
     }
     
     cell.stoodUpImageView.image = hasStoodUpToday ? [UIImage imageNamed:@"Check Mark Badge"] : [UIImage imageNamed:@"Exclamation Mark Badge"];
-    cell.badgeImageView.image = [UIImage imageNamed:@"Badge 2"];
-    cell.timeLabel.text = [NSString stringWithFormat:@"08:0%lu", indexPath.row + 1];
+    cell.badgeImageView.image = [UIImage imageNamed:@"Badge 1"];
+    cell.timeLabel.text = hasStoodUpToday ? [NSString stringWithFormat:@"08:0%lu", indexPath.row + 1] : @"--:--";
+    cell.timeLabel.textColor = hasStoodUpToday ? [UIColor greenColor] : [UIColor redColor];
     
     return cell;
 }
