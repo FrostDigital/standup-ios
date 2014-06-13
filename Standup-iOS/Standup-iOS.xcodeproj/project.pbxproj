@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22313DC1194B634100DD11E9 /* FDStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 22313DC0194B634100DD11E9 /* FDStringUtils.m */; };
+		22313DC4194B670B00DD11E9 /* FDTeamStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22313DC3194B670B00DD11E9 /* FDTeamStorage.m */; };
 		22527D87194AFBA0009B989B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D86194AFBA0009B989B /* Foundation.framework */; };
 		22527D89194AFBA0009B989B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D88194AFBA0009B989B /* CoreGraphics.framework */; };
 		22527D8B194AFBA0009B989B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D8A194AFBA0009B989B /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		22313DBF194B634100DD11E9 /* FDStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStringUtils.h; sourceTree = "<group>"; };
 		22313DC0194B634100DD11E9 /* FDStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStringUtils.m; sourceTree = "<group>"; };
+		22313DC2194B670B00DD11E9 /* FDTeamStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTeamStorage.h; sourceTree = "<group>"; };
+		22313DC3194B670B00DD11E9 /* FDTeamStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTeamStorage.m; sourceTree = "<group>"; };
 		22527D83194AFBA0009B989B /* Standup-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Standup-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22527D86194AFBA0009B989B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22527D88194AFBA0009B989B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -232,6 +235,8 @@
 				22A354BA194B296C00732E53 /* FDTodoItem.m */,
 				22A354BC194B29C700732E53 /* FDStandupUser.h */,
 				22A354BD194B29C700732E53 /* FDStandupUser.m */,
+				22313DC2194B670B00DD11E9 /* FDTeamStorage.h */,
+				22313DC3194B670B00DD11E9 /* FDTeamStorage.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -485,6 +490,7 @@
 			files = (
 				9A75FFDD194B4A950036EE88 /* FDOthersTodoTableViewCell.m in Sources */,
 				2290296C194B0A6700D249F7 /* FDTeam.m in Sources */,
+				22313DC4194B670B00DD11E9 /* FDTeamStorage.m in Sources */,
 				9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */,
 				22A354BB194B296C00732E53 /* FDTodoItem.m in Sources */,
 				22527D97194AFBA0009B989B /* FDAppDelegate.m in Sources */,
