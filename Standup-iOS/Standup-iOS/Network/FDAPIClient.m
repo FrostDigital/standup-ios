@@ -81,4 +81,13 @@ static FDAPIClient *instance = nil;
           }];
 }
 
+
+
+//TODO: Post standup
+// POST /team/:teamId/standup/:date/:userId
+
+
+
+
+
 @end

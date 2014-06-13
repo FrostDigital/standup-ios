@@ -22,10 +22,9 @@
 
 @implementation FDDashboardViewController
 {
-    //    NSArray *images;
-    
     FDTeam *team;
     NSDate *selectedDate;
+    FDUser *selectedUser;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,7 +84,7 @@
     
     for (FDStandup *standup in team.standups)
     {
-        if ([FDDateUtils isTodaysDate:standup.date])
+        if ([FDDateUtils isSameDate:standup.date asCompareDate:selectedDate])
         {
             for (FDStandupUser *standupUser in standup.users)
             {
@@ -109,6 +108,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    selectedUser = [[[[FDTeamStorage sharedStorage] activeTeam] users] objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:FDSegueDashboardToOthersStandup sender:self];
 }
 
@@ -127,11 +127,15 @@
     {
         FDStandupTableViewController *standupVC = (FDStandupTableViewController *)segue.destinationViewController;
         standupVC.isMyStandup = YES;
+        standupVC.date = selectedDate;
+        standupVC.user = selectedUser;
     }
     else if ([segue.identifier isEqualToString:FDSegueDashboardToOthersStandup])
     {
         FDStandupTableViewController *standupVC = (FDStandupTableViewController *)segue.destinationViewController;
         standupVC.isMyStandup = NO;
+        standupVC.date = selectedDate;
+        standupVC.user = selectedUser;
     }
     else if ([segue.identifier isEqualToString:FDSegueDashboardToSettings])
     {

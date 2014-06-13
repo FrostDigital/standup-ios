@@ -8,6 +8,12 @@
 
 #import "FDStandupTableViewController.h"
 #import "FDOthersTodoTableViewCell.h"
+#import "FDDateUtils.h"
+#import "FDTeamStorage.h"
+#import "FDTeam.h"
+#import "FDStandup.h"
+#import "FDStandupUser.h"
+#import "FDTodoItem.h"
 
 @interface FDStandupTableViewController ()
 
@@ -15,30 +21,26 @@
 
 @implementation FDStandupTableViewController
 {
+    FDTeam *team;
     NSArray *todayToDos;
     NSArray *yesterdayToDos;
-    NSDictionary *standUps;
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    FDStandupUser *standupUser;
+    NSDictionary *standups;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = _isMyStandup ? @"My Standup" : @"Other's Standup";
+    self.navigationItem.title = [FDDateUtils stringFromDate:_date];
     
-    todayToDos = @[@"Make coffee", @"Code a standapp"];
-    yesterdayToDos = @[@"Code Easyhunt", @"Meeting with Malin from Sundare Barn"];
+    team = [[FDTeamStorage sharedStorage] activeTeam];
+    standupUser = [[FDTeamStorage sharedStorage] standupUserForUser:_user date:_date];
     
-    standUps = @{@"today": todayToDos, @"yesterday": yesterdayToDos};
+    todayToDos = standupUser.today;
+    yesterdayToDos = standupUser.yesterday;
+    
+    standups = @{@"today": todayToDos, @"yesterday": yesterdayToDos};
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +53,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[standUps allValues] count];
+    return [[standups allValues] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[standUps allValues] objectAtIndex:section] count];
+    return [[[standups allValues] objectAtIndex:section] count];
 }
 
 
@@ -68,7 +70,7 @@
         
         cell.delegate = self;
         
-        cell.todoLabel.text = [[[standUps allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        cell.todoLabel.text = [[[standups allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         [cell.checkButton setImage:[UIImage imageNamed:@"Checkbox Empty"] forState:UIControlStateNormal];
         
         return cell;
@@ -76,7 +78,9 @@
     
     FDOthersTodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FDOthersTodoTableViewCell" forIndexPath:indexPath];
     
-    cell.todoLabel.text = [[[standUps allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    FDTodoItem *todoItem = [[[standups allValues] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    cell.todoLabel.text = todoItem.text;
     cell.imageView.image = indexPath.row % 2 == 0 ? [UIImage imageNamed:@"Check Mark"] : [UIImage imageNamed:@"Dot Mark"];
     
     return cell;

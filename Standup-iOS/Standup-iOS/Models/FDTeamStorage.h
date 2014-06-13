@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class FDTeam;
+@class FDTeam, FDUser, FDStandupUser;
 
 @interface FDTeamStorage : NSObject
 
@@ -17,5 +17,6 @@
 - (void)createTeamFromDictionary:(NSDictionary *) dictionary;
 
 - (FDTeam *) activeTeam;
+- (FDStandupUser *) standupUserForUser:(FDUser *) user date:(NSDate *) date;
 
 @end

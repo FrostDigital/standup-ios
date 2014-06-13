@@ -12,6 +12,8 @@
 
 + (NSDate *) dateFromYyyyMmDdString:(NSString *)dateString;
 
-+ (BOOL) isTodaysDate:(NSDate *) date;
++ (NSString *) stringFromDate:(NSDate *) date;
+
++ (BOOL) isSameDate:(NSDate *) date asCompareDate:(NSDate *) compareDate;
 
 @end

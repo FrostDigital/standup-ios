@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FDMyTodoTableViewCell.h"
 
+@class FDUser;
+
 @interface FDStandupTableViewController : UITableViewController <FDMyTodoTableViewCellCheckButtonDelegate>
 
 @property (nonatomic) BOOL isMyStandup;
+@property (nonatomic) NSDate *date;
+@property (nonatomic) FDUser *user;
 
 @end

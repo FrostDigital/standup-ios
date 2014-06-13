@@ -23,15 +23,20 @@ static NSDateFormatter* dateFormatter;
     return [dateFormatter dateFromString:dateString];
 }
 
-+ (BOOL)isTodaysDate:(NSDate *)date
++ (NSString *)stringFromDate:(NSDate *)date
+{   
+    return [dateFormatter stringFromDate:date];
+}
+
++ (BOOL)isSameDate:(NSDate *)date asCompareDate:(NSDate *)compareDate
 {
-    NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-    NSDateComponents *today = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *someDate = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
+    NSDateComponents *otherDate = [[NSCalendar currentCalendar] components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:compareDate];
     
-    return [today day] == [otherDay day] &&
-    [today month] == [otherDay month] &&
-    [today year] == [otherDay year] &&
-    [today era] == [otherDay era];
+    return [someDate day] == [otherDate day] &&
+    [someDate month] == [otherDate month] &&
+    [someDate year] == [otherDate year] &&
+    [someDate era] == [otherDate era];
 }
 
 @end
