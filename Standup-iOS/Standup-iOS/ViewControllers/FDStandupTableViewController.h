@@ -10,4 +10,6 @@
 
 @interface FDStandupTableViewController : UITableViewController
 
+@property (nonatomic) BOOL isMyStandup;
+
 @end
