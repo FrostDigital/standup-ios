@@ -1,7 +1,9 @@
 platform :ios, "7.0"
 
+xcodeproj 'Standup-iOS'
+
 pod 'AFNetworking', '2.3.0'
-pod 'CocoaLumberjack', '1.6'
+pod 'CocoaLumberjack', '1.9.0'
 pod 'UIColor-Utilities', '1.0.1'
 pod 'TSMessages', '0.9.9'
 pod 'NSDate-Extensions', '0.0.1'
@@ -9,9 +11,10 @@ pod 'BlocksKit', '2.2.3'
 pod 'SVProgressHUD'
 pod 'ReactiveCocoa', '2.3.1'
 pod 'ObjectiveSugar', '0.9'
+pod 'AHAlertView', '0.0.2'
 
 target :'Standup-iOSTests', :exclusive => true do
     pod 'Specta',   '~> 0.2.1'
     pod 'Expecta',  '~> 0.3.0'
-	pod 'OCMock',   '2.2.3'
+	  pod 'OCMock',   '2.2.3'
 end
