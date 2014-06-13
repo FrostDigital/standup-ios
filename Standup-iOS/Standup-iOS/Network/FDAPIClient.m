@@ -8,15 +8,14 @@
 
 #import "FDAPIClient.h"
 
-#define BASE_URL @"http://frost-standup-push.herokuapp.com"
-
-#define PUSH_REGISTRATION_URL @"register"
+#define PUSH_REGISTRATION_URL @"http://frost-standup-push.herokuapp.com/register"
 #define kDeviceId @"deviceId"
 #define kUserId @"userId"
 #define kDeviceType @"deviceType"
 #define kDeviceTypeiOS @"ios"
 
-#define TEAM_URL @"team"
+
+#define GET_TEAM_URL @"http://standup-mock-api.herokuapp.com/team/"
 
 @interface FDAPIClient()
 
@@ -40,7 +39,7 @@ static FDAPIClient *instance = nil;
 - (id) init {
 
     if (self = [super init]) {
-        _manager = [[AFHTTPRequestOperationManager manager] initWithBaseURL:[NSURL URLWithString:BASE_URL]];
+        _manager = [[AFHTTPRequestOperationManager manager] init];
         _manager.responseSerializer = [AFJSONResponseSerializer serializer];
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
@@ -62,15 +61,19 @@ static FDAPIClient *instance = nil;
 }
 
 - (void)getTeamForId:(NSString *)teamId success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
-    [_manager GET:[NSString stringWithFormat:@"%@/%@", TEAM_URL, teamId]
+    [_manager GET:[GET_TEAM_URL stringByAppendingString:teamId]
        parameters:nil
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               DDLogDebug(@"GET Team SUCCESS response: %@", responseObject);
               //Parse and save
-              success(operation, responseObject);
+              if (success) {
+                  success(operation, responseObject);
+              }
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               DDLogDebug(@"GET team FAIL error: %@", error.description);
-              failure(operation, error);
+              if (failure) {
+                  failure(operation, error);
+              }
           }];
 }
 
