@@ -96,6 +96,8 @@
     UIColor *trancperantBlack = [UIColor colorWithWhite:0 alpha:0.4];
     cell.timeLabel.backgroundColor = trancperantBlack;
     cell.nameLabel.backgroundColor = trancperantBlack;
+    cell.badgeImageView.image = [UIImage imageNamed:@"Badge 2"];
+    cell.stoodUpImageView.image = [UIImage imageNamed:@"Check Mark Badge"];
     
     return cell;
 }
