@@ -13,7 +13,11 @@
 
 + (instancetype) sharedInstance;
 
-- (void)registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken userId:(NSString *)userId;
-- (void)getTeamForId:(NSString *)teamId success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+- (void)registerForPushNotificationsWithDeviceToken:(NSString *)deviceToken
+                                             userId:(NSString *)userId;
+
+- (void)getTeamWithId:(NSString *) teamId
+              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject)) success
+              failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error)) failure;
 
 @end

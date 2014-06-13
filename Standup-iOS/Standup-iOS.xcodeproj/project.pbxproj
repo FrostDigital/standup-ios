@@ -34,6 +34,7 @@
 		9A75FFD7194B43310036EE88 /* FDUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFD6194B43310036EE88 /* FDUserCollectionViewCell.m */; };
 		9A75FFDA194B4A7C0036EE88 /* FDMyTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFD9194B4A7C0036EE88 /* FDMyTodoTableViewCell.m */; };
 		9A75FFDD194B4A950036EE88 /* FDOthersTodoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFDC194B4A950036EE88 /* FDOthersTodoTableViewCell.m */; };
+		9A75FFEC194B881B0036EE88 /* FDDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A75FFEB194B881B0036EE88 /* FDDateUtils.m */; };
 		9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78CE194B064700E079F0 /* FDLoginViewController.m */; };
 		9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78D1194B06A500E079F0 /* FDDashboardViewController.m */; };
 		9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */; };
@@ -92,6 +93,8 @@
 		9A75FFD9194B4A7C0036EE88 /* FDMyTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDMyTodoTableViewCell.m; path = ViewControllers/FDMyTodoTableViewCell.m; sourceTree = "<group>"; };
 		9A75FFDB194B4A950036EE88 /* FDOthersTodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDOthersTodoTableViewCell.h; path = ViewControllers/FDOthersTodoTableViewCell.h; sourceTree = "<group>"; };
 		9A75FFDC194B4A950036EE88 /* FDOthersTodoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDOthersTodoTableViewCell.m; path = ViewControllers/FDOthersTodoTableViewCell.m; sourceTree = "<group>"; };
+		9A75FFEA194B881B0036EE88 /* FDDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDateUtils.h; sourceTree = "<group>"; };
+		9A75FFEB194B881B0036EE88 /* FDDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDateUtils.m; sourceTree = "<group>"; };
 		9ABE78CD194B064700E079F0 /* FDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLoginViewController.h; path = ViewControllers/FDLoginViewController.h; sourceTree = "<group>"; };
 		9ABE78CE194B064700E079F0 /* FDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLoginViewController.m; path = ViewControllers/FDLoginViewController.m; sourceTree = "<group>"; };
 		9ABE78D0194B06A500E079F0 /* FDDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDashboardViewController.h; path = ViewControllers/FDDashboardViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 			children = (
 				22313DBF194B634100DD11E9 /* FDStringUtils.h */,
 				22313DC0194B634100DD11E9 /* FDStringUtils.m */,
+				9A75FFEA194B881B0036EE88 /* FDDateUtils.h */,
+				9A75FFEB194B881B0036EE88 /* FDDateUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -225,18 +230,9 @@
 		2290296D194B0A7500D249F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2290296A194B0A6700D249F7 /* FDTeam.h */,
-				2290296B194B0A6700D249F7 /* FDTeam.m */,
-				2290296E194B0AA900D249F7 /* FDUser.h */,
-				2290296F194B0AA900D249F7 /* FDUser.m */,
-				22902971194B0AB700D249F7 /* FDStandup.h */,
-				22902972194B0AB700D249F7 /* FDStandup.m */,
-				22A354B9194B296C00732E53 /* FDTodoItem.h */,
-				22A354BA194B296C00732E53 /* FDTodoItem.m */,
-				22A354BC194B29C700732E53 /* FDStandupUser.h */,
-				22A354BD194B29C700732E53 /* FDStandupUser.m */,
-				22313DC2194B670B00DD11E9 /* FDTeamStorage.h */,
-				22313DC3194B670B00DD11E9 /* FDTeamStorage.m */,
+				9A75FFE8194B868A0036EE88 /* Team */,
+				9A75FFE9194B86900036EE88 /* User */,
+				9A75FFE7194B867B0036EE88 /* Standup */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +302,39 @@
 				9ABE78D7194B06E200E079F0 /* FDSettingsTableViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		9A75FFE7194B867B0036EE88 /* Standup */ = {
+			isa = PBXGroup;
+			children = (
+				22902971194B0AB700D249F7 /* FDStandup.h */,
+				22902972194B0AB700D249F7 /* FDStandup.m */,
+				22A354BC194B29C700732E53 /* FDStandupUser.h */,
+				22A354BD194B29C700732E53 /* FDStandupUser.m */,
+				22A354B9194B296C00732E53 /* FDTodoItem.h */,
+				22A354BA194B296C00732E53 /* FDTodoItem.m */,
+			);
+			name = Standup;
+			sourceTree = "<group>";
+		};
+		9A75FFE8194B868A0036EE88 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				2290296A194B0A6700D249F7 /* FDTeam.h */,
+				2290296B194B0A6700D249F7 /* FDTeam.m */,
+				22313DC2194B670B00DD11E9 /* FDTeamStorage.h */,
+				22313DC3194B670B00DD11E9 /* FDTeamStorage.m */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		9A75FFE9194B86900036EE88 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2290296E194B0AA900D249F7 /* FDUser.h */,
+				2290296F194B0AA900D249F7 /* FDUser.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		9ABE78D9194B06FD00E079F0 /* View Controllers */ = {
@@ -495,6 +524,7 @@
 				22A354BB194B296C00732E53 /* FDTodoItem.m in Sources */,
 				22527D97194AFBA0009B989B /* FDAppDelegate.m in Sources */,
 				22902973194B0AB700D249F7 /* FDStandup.m in Sources */,
+				9A75FFEC194B881B0036EE88 /* FDDateUtils.m in Sources */,
 				22527D93194AFBA0009B989B /* main.m in Sources */,
 				22902970194B0AA900D249F7 /* FDUser.m in Sources */,
 				9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */,

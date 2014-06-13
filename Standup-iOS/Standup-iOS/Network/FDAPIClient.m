@@ -7,6 +7,7 @@
 //
 
 #import "FDAPIClient.h"
+#import "FDTeamStorage.h"
 
 #define PUSH_REGISTRATION_URL @"http://frost-standup-push.herokuapp.com/register"
 #define kDeviceId @"deviceId"
@@ -14,8 +15,7 @@
 #define kDeviceType @"deviceType"
 #define kDeviceTypeiOS @"ios"
 
-
-#define GET_TEAM_URL @"http://standup-mock-api.herokuapp.com/team/"
+#define GET_TEAM_URL @"http://frost-standup.herokuapp.com/team/"
 
 @interface FDAPIClient()
 
@@ -60,12 +60,16 @@ static FDAPIClient *instance = nil;
     ];
 }
 
-- (void)getTeamForId:(NSString *)teamId success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+- (void)getTeamWithId:(NSString *)teamId success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+{
     [_manager GET:[GET_TEAM_URL stringByAppendingString:teamId]
        parameters:nil
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               DDLogDebug(@"GET Team SUCCESS response: %@", responseObject);
               //Parse and save
+              
+              [[FDTeamStorage sharedStorage] createTeamFromDictionary:responseObject];
+              
               if (success) {
                   success(operation, responseObject);
               }

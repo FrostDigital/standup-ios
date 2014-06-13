@@ -10,4 +10,11 @@
 
 @interface FDStandupUser : NSObject
 
+@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *badge;
+@property (nonatomic, copy) NSArray *today;
+@property (nonatomic, copy) NSArray *yesterday;
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
+
 @end

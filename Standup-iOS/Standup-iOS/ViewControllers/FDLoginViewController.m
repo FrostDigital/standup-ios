@@ -7,6 +7,7 @@
 //
 
 #import "FDLoginViewController.h"
+#import "FDAPIClient.h"
 
 @interface FDLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -50,6 +51,13 @@
 
 - (IBAction)login:(id)sender
 {
-    [self performSegueWithIdentifier:FDSegueLoginToDashboard sender:self];
+    [[FDAPIClient sharedInstance] getTeamWithId:@"c31f2edac0aac0baf39a4110d2bfefcb3a3f0ea1" success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        [self performSegueWithIdentifier:FDSegueLoginToDashboard sender:self];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Error Get Team" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }];
 }
 @end

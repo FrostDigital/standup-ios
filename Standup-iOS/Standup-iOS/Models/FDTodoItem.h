@@ -10,4 +10,9 @@
 
 @interface FDTodoItem : NSObject
 
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) BOOL completed;
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
+
 @end

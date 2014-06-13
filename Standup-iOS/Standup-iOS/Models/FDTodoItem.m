@@ -8,6 +8,24 @@
 
 #import "FDTodoItem.h"
 
+#define kTextKey @"text"
+#define kCompletedKey @"completed"
+
 @implementation FDTodoItem
+//                                {
+//                                    "text": "Hackathon!",
+//                                    "completed": false
+//                                }
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init])
+    {
+        _text = [dictionary objectForKey:kTextKey];
+        _completed = [[dictionary objectForKey:kCompletedKey] boolValue];
+    }
+    
+    return self;
+}
 
 @end

@@ -10,13 +10,21 @@
 #import "FDStandupTableViewController.h"
 #import <UIImageView+AFNetworking.h>
 #import "FDUserCollectionViewCell.h"
+#import "FDTeamStorage.h"
+#import "FDTeam.h"
+#import "FDUser.h"
+#import "FDStandup.h"
+#import "FDStandupUser.h"
+#import "FDDateUtils.h"
 
 @interface FDDashboardViewController ()
 @end
 
 @implementation FDDashboardViewController
 {
-    NSArray *images;
+    //    NSArray *images;
+    
+    FDTeam *team;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,31 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    // http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg
-    // http://sereedmedia.com/srmwp/wp-content/uploads/kitten.jpg
-    // http://kalle.cafe.se/files/2012/02/Cute-Kitten-kittens-16122946-1280-800.jpeg
-    // http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg
-
-    
-    images = @[@"http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg",
-               @"http://sereedmedia.com/srmwp/wp-content/uploads/kitten.jpg",
-               @"http://kalle.cafe.se/files/2012/02/Cute-Kitten-kittens-16122946-1280-800.jpeg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg",
-               @"http://sereedmedia.com/srmwp/wp-content/uploads/kitten.jpg",
-               @"http://kalle.cafe.se/files/2012/02/Cute-Kitten-kittens-16122946-1280-800.jpeg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg",
-               @"http://sereedmedia.com/srmwp/wp-content/uploads/kitten.jpg",
-               @"http://kalle.cafe.se/files/2012/02/Cute-Kitten-kittens-16122946-1280-800.jpeg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/cute-kitten-playing.jpg",
-               @"http://sereedmedia.com/srmwp/wp-content/uploads/kitten.jpg",
-               @"http://kalle.cafe.se/files/2012/02/Cute-Kitten-kittens-16122946-1280-800.jpeg",
-               @"http://critterbabies.com/wp-content/gallery/kittens/happy-kitten-kittens-5890512-1600-1200.jpg"];
-    
+    team = [[FDTeamStorage sharedStorage] activeTeam];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,24 +65,39 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return images.count;
+    return team.users.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     FDUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FDUserCollectionCell" forIndexPath:indexPath];
     
-    UIImageView *imageView = [[UIImageView alloc] init];
-    [imageView setImageWithURL:[NSURL URLWithString:images[indexPath.row]] placeholderImage:[UIImage imageNamed:@"NotificationBackgroundSuccess.png"]];
+    FDUser *user = [team.users objectAtIndex:indexPath.row];
     
+    UIImageView *imageView = [[UIImageView alloc] init];
+    [imageView setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"User Avatar"]];
     cell.backgroundView = imageView;
-    cell.timeLabel.text = [NSString stringWithFormat:@"08:0%lu", indexPath.row + 1];
-    cell.nameLabel.text = [NSString stringWithFormat:@"Josefin #%lu", indexPath.row + 1];
-    UIColor *trancperantBlack = [UIColor colorWithWhite:0 alpha:0.4];
-    cell.timeLabel.backgroundColor = trancperantBlack;
-    cell.nameLabel.backgroundColor = trancperantBlack;
+    cell.nameLabel.text = user.name;
+    
+    BOOL hasStoodUpToday = NO;
+    
+    for (FDStandup *standup in team.standups)
+    {
+        if ([FDDateUtils isTodaysDate:standup.date])
+        {
+            for (FDStandupUser *standupUser in standup.users)
+            {
+                if ([user.userId isEqualToString:standupUser.userId])
+                {
+                    hasStoodUpToday = YES;
+                }
+            }
+        }
+    }
+    
+    cell.stoodUpImageView.image = hasStoodUpToday ? [UIImage imageNamed:@"Check Mark Badge"] : [UIImage imageNamed:@"Exclamation Mark Badge"];
     cell.badgeImageView.image = [UIImage imageNamed:@"Badge 2"];
-    cell.stoodUpImageView.image = [UIImage imageNamed:@"Check Mark Badge"];
+    cell.timeLabel.text = [NSString stringWithFormat:@"08:0%lu", indexPath.row + 1];
     
     return cell;
 }

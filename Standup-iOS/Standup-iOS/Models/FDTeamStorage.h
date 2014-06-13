@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class FDTeam;
+
 @interface FDTeamStorage : NSObject
 
-+ (instancetype) sharedStorage; 
++ (instancetype) sharedStorage;
+
+- (void)createTeamFromDictionary:(NSDictionary *) dictionary;
+
+- (FDTeam *) activeTeam;
 
 @end

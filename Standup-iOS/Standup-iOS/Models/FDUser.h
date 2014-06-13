@@ -18,7 +18,6 @@
 @property (strong, nonatomic) NSString *avatar;
 @property (nonatomic, getter=isActive) BOOL active;
 
-
 - (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 
 @end

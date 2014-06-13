@@ -10,4 +10,9 @@
 
 @interface FDStandup : NSObject
 
+@property (strong, nonatomic) NSDate *date;
+@property (nonatomic, copy) NSArray *users;
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
+
 @end

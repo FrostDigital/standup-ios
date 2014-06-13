@@ -7,9 +7,11 @@
 //
 
 #import "FDTeamStorage.h"
+#import "FDTeam.h"
 
 @implementation FDTeamStorage {
-    NSMutableDictionary *teamsDictionary;
+//    NSMutableDictionary *teamsDictionary;
+    FDTeam *activeTeam;
 }
 
 +(instancetype) sharedStorage {
@@ -18,10 +20,22 @@
     
     dispatch_once(&once, ^{
         sharedStorage = [[self alloc]init];
-        sharedStorage->teamsDictionary = [NSMutableDictionary dictionary];
+//        sharedStorage->teamsDictionary = [NSMutableDictionary dictionary];
     });
     
     return sharedStorage;
+}
+
+- (void)createTeamFromDictionary:(NSDictionary *)dictionary
+{
+    FDTeam *team = [[FDTeam alloc] initWithDictionary:dictionary];
+//    [teamsDictionary setObject:team forKey:team.teamName];
+    activeTeam = team;
+}
+
+- (FDTeam *)activeTeam
+{
+    return activeTeam;
 }
 
 @end

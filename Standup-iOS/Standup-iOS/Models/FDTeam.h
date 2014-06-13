@@ -10,9 +10,10 @@
 
 @interface FDTeam : NSObject
 
-@property (strong, nonatomic) NSString *teamName;
-@property (strong, nonatomic) NSMutableArray *users;
-@property (strong, nonatomic) NSMutableArray *standups;
+@property (copy, nonatomic) NSString *teamId;
+@property (copy, nonatomic) NSString *teamName;
+@property (copy, nonatomic) NSArray *users;
+@property (copy, nonatomic) NSArray *standups;
 
 - (instancetype) initWithDictionary:(NSDictionary *)teamDictionary;
 
