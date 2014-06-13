@@ -20,6 +20,11 @@
 		22527DA8194AFBA0009B989B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22527D8A194AFBA0009B989B /* UIKit.framework */; };
 		22527DB0194AFBA0009B989B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22527DAE194AFBA0009B989B /* InfoPlist.strings */; };
 		22527DB2194AFBA0009B989B /* Standup_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22527DB1194AFBA0009B989B /* Standup_iOSTests.m */; };
+		2290296C194B0A6700D249F7 /* FDTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290296B194B0A6700D249F7 /* FDTeam.m */; };
+		22902970194B0AA900D249F7 /* FDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290296F194B0AA900D249F7 /* FDUser.m */; };
+		22902973194B0AB700D249F7 /* FDStandup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22902972194B0AB700D249F7 /* FDStandup.m */; };
+		22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22902976194B0BD800D249F7 /* FDAPIClient.m */; };
+		56D7E5B6830E4C618623ACFF /* libPods-Standup-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */; };
 		626DFAC130FA46FEA48C9AF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A30D882175455EBC2C4AEC /* libPods.a */; };
 		9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78CE194B064700E079F0 /* FDLoginViewController.m */; };
 		9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78D1194B06A500E079F0 /* FDDashboardViewController.m */; };
@@ -55,6 +60,15 @@
 		22527DAD194AFBA0009B989B /* Standup-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Standup-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		22527DAF194AFBA0009B989B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22527DB1194AFBA0009B989B /* Standup_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Standup_iOSTests.m; sourceTree = "<group>"; };
+		2290296A194B0A6700D249F7 /* FDTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTeam.h; sourceTree = "<group>"; };
+		2290296B194B0A6700D249F7 /* FDTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTeam.m; sourceTree = "<group>"; };
+		2290296E194B0AA900D249F7 /* FDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDUser.h; sourceTree = "<group>"; };
+		2290296F194B0AA900D249F7 /* FDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDUser.m; sourceTree = "<group>"; };
+		22902971194B0AB700D249F7 /* FDStandup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStandup.h; sourceTree = "<group>"; };
+		22902972194B0AB700D249F7 /* FDStandup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStandup.m; sourceTree = "<group>"; };
+		22902975194B0BD800D249F7 /* FDAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDAPIClient.h; sourceTree = "<group>"; };
+		22902976194B0BD800D249F7 /* FDAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDAPIClient.m; sourceTree = "<group>"; };
+		84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Standup-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABE78CD194B064700E079F0 /* FDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLoginViewController.h; path = ViewControllers/FDLoginViewController.h; sourceTree = "<group>"; };
 		9ABE78CE194B064700E079F0 /* FDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLoginViewController.m; path = ViewControllers/FDLoginViewController.m; sourceTree = "<group>"; };
 		9ABE78D0194B06A500E079F0 /* FDDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDDashboardViewController.h; path = ViewControllers/FDDashboardViewController.h; sourceTree = "<group>"; };
@@ -63,6 +77,7 @@
 		9ABE78D4194B06C700E079F0 /* FDStandupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDStandupTableViewController.m; path = ViewControllers/FDStandupTableViewController.m; sourceTree = "<group>"; };
 		9ABE78D6194B06E200E079F0 /* FDSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDSettingsTableViewController.h; path = ViewControllers/FDSettingsTableViewController.h; sourceTree = "<group>"; };
 		9ABE78D7194B06E200E079F0 /* FDSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDSettingsTableViewController.m; path = ViewControllers/FDSettingsTableViewController.m; sourceTree = "<group>"; };
+		A10ADCF75AB744398CB8108F /* Pods-Standup-iOSTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Standup-iOSTests.xcconfig"; path = "Pods/Pods-Standup-iOSTests.xcconfig"; sourceTree = "<group>"; };
 		AD780EC4DF2A430EAD42DB6D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B5A30D882175455EBC2C4AEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +101,7 @@
 				22527DA6194AFBA0009B989B /* XCTest.framework in Frameworks */,
 				22527DA8194AFBA0009B989B /* UIKit.framework in Frameworks */,
 				22527DA7194AFBA0009B989B /* Foundation.framework in Frameworks */,
+				56D7E5B6830E4C618623ACFF /* libPods-Standup-iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +116,7 @@
 				22527D85194AFBA0009B989B /* Frameworks */,
 				22527D84194AFBA0009B989B /* Products */,
 				AD780EC4DF2A430EAD42DB6D /* Pods.xcconfig */,
+				A10ADCF75AB744398CB8108F /* Pods-Standup-iOSTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +137,7 @@
 				22527D8A194AFBA0009B989B /* UIKit.framework */,
 				22527DA5194AFBA0009B989B /* XCTest.framework */,
 				B5A30D882175455EBC2C4AEC /* libPods.a */,
+				84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +149,8 @@
 				22527D96194AFBA0009B989B /* FDAppDelegate.m */,
 				22527D98194AFBA0009B989B /* Main.storyboard */,
 				9ABE78D9194B06FD00E079F0 /* View Controllers */,
+				2290296D194B0A7500D249F7 /* Models */,
+				22902974194B0B8600D249F7 /* Network */,
 				22527D9E194AFBA0009B989B /* Images.xcassets */,
 				22527D8D194AFBA0009B989B /* Supporting Files */,
 			);
@@ -164,6 +184,28 @@
 				22527DAE194AFBA0009B989B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2290296D194B0A7500D249F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2290296A194B0A6700D249F7 /* FDTeam.h */,
+				2290296B194B0A6700D249F7 /* FDTeam.m */,
+				2290296E194B0AA900D249F7 /* FDUser.h */,
+				2290296F194B0AA900D249F7 /* FDUser.m */,
+				22902971194B0AB700D249F7 /* FDStandup.h */,
+				22902972194B0AB700D249F7 /* FDStandup.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22902974194B0B8600D249F7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22902975194B0BD800D249F7 /* FDAPIClient.h */,
+				22902976194B0BD800D249F7 /* FDAPIClient.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9ABE78D9194B06FD00E079F0 /* View Controllers */ = {
@@ -207,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22527DB8194AFBA0009B989B /* Build configuration list for PBXNativeTarget "Standup-iOSTests" */;
 			buildPhases = (
+				F367E85582354AC9B955232B /* Check Pods Manifest.lock */,
 				22527DA0194AFBA0009B989B /* Sources */,
 				22527DA1194AFBA0009B989B /* Frameworks */,
 				22527DA2194AFBA0009B989B /* Resources */,
+				279C0D25B0764715894C083C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +336,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		279C0D25B0764715894C083C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Standup-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81AB2A67B3354B42B46275E9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +366,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F367E85582354AC9B955232B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,12 +388,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2290296C194B0A6700D249F7 /* FDTeam.m in Sources */,
 				9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */,
 				22527D97194AFBA0009B989B /* FDAppDelegate.m in Sources */,
+				22902973194B0AB700D249F7 /* FDStandup.m in Sources */,
 				22527D93194AFBA0009B989B /* main.m in Sources */,
+				22902970194B0AA900D249F7 /* FDUser.m in Sources */,
 				9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */,
 				9ABE78D8194B06E200E079F0 /* FDSettingsTableViewController.m in Sources */,
 				9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */,
+				22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +547,7 @@
 		};
 		22527DB9194AFBA0009B989B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10ADCF75AB744398CB8108F /* Pods-Standup-iOSTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Standup-iOS.app/Standup-iOS";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -491,6 +570,7 @@
 		};
 		22527DBA194AFBA0009B989B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A10ADCF75AB744398CB8108F /* Pods-Standup-iOSTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Standup-iOS.app/Standup-iOS";
 				FRAMEWORK_SEARCH_PATHS = (
