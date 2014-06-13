@@ -10,4 +10,7 @@
 
 @interface FDDashboardViewController : UICollectionViewController
 
+- (IBAction)openSettings:(id)sender;
+- (IBAction)addStandup:(id)sender;
+
 @end

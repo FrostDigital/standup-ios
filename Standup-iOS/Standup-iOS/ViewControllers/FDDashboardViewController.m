@@ -46,4 +46,15 @@
 }
 */
 
+
+
+- (IBAction)openSettings:(id)sender
+{
+    [self performSegueWithIdentifier:FDSegueDashboardToSettings sender:self];
+}
+
+- (IBAction)addStandup:(id)sender
+{
+    [self performSegueWithIdentifier:FDSegueDashboardToMyStandup sender:self];
+}
 @end

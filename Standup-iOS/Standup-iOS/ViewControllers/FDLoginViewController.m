@@ -9,6 +9,8 @@
 #import "FDLoginViewController.h"
 
 @interface FDLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -46,4 +48,8 @@
 }
 */
 
+- (IBAction)login:(id)sender
+{
+    [self performSegueWithIdentifier:FDSegueLoginToDashboard sender:self];
+}
 @end
