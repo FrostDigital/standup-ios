@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#define STATE_ACTIVE   @"ACTIVE"
+#define STATE_INACTIVE   @"INACTIVE"
+
 @interface FDUser : NSObject
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *avatar;
+@property (nonatomic, getter=isActive) BOOL active;
+
+
+- (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
 
 @end
