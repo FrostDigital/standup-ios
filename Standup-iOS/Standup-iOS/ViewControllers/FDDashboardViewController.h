@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FDDashboardViewController : UICollectionViewController
+@interface FDDashboardViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 - (IBAction)openSettings:(id)sender;
 - (IBAction)addStandup:(id)sender;

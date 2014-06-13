@@ -60,28 +60,55 @@
             </objects>
             <point key="canvasLocation" x="10" y="-104"/>
         </scene>
-        <!--Dashboard View Controller - Title-->
+        <!--Dashboard View Controller - Dashboard-->
         <scene sceneID="ROA-eb-XPl">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="80u-GI-nAi" customClass="FDDashboardViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="azm-dT-jfN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pZX-A4-dgq">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pZX-A4-dgq">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="W68-41-HvW">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FDUserCollectionCell" id="W68-41-HvW">
+                                <rect key="frame" x="0.0" y="64" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYb-eG-h5j">
+                                            <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NotificationBackgroundSuccess.png" translatesAutoresizingMaskIntoConstraints="NO" id="bJh-e7-nEp">
+                                            <rect key="frame" x="120" y="0.0" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NotificationBackgroundError.png" translatesAutoresizingMaskIntoConstraints="NO" id="60a-Cx-dum">
+                                            <rect key="frame" x="120" y="120" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Josefin Andersson" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="y5Y-zL-K95">
+                                            <rect key="frame" x="0.0" y="120" width="120" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <size key="customSize" width="160" height="160"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -89,7 +116,7 @@
                             <outlet property="delegate" destination="80u-GI-nAi" id="7Qh-Q5-lxF"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="EZ8-8H-dWp">
+                    <navigationItem key="navigationItem" title="Dashboard" id="EZ8-8H-dWp">
                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="h8O-eJ-3KX">
                             <connections>
                                 <action selector="openSettings:" destination="80u-GI-nAi" id="XyV-bW-6KF"/>
@@ -111,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="424" y="-104"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings Table View Controller - My Profile-->
         <scene sceneID="T64-sf-eeM">
             <objects>
                 <tableViewController id="t5N-KS-X2F" customClass="FDSettingsTableViewController" sceneMemberID="viewController">
@@ -134,7 +161,7 @@
                             <outlet property="delegate" destination="t5N-KS-X2F" id="ggW-00-h0u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YrS-6D-o3J"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="YrS-6D-o3J"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tu9-53-Wmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,6 +215,10 @@
             <point key="canvasLocation" x="-399" y="-104"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NotificationBackgroundError.png" width="1" height="78"/>
+        <image name="NotificationBackgroundSuccess.png" width="1" height="78"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
