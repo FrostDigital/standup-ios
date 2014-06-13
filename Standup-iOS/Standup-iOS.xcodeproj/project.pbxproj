@@ -24,6 +24,9 @@
 		22902970194B0AA900D249F7 /* FDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290296F194B0AA900D249F7 /* FDUser.m */; };
 		22902973194B0AB700D249F7 /* FDStandup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22902972194B0AB700D249F7 /* FDStandup.m */; };
 		22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22902976194B0BD800D249F7 /* FDAPIClient.m */; };
+		22A354BB194B296C00732E53 /* FDTodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A354BA194B296C00732E53 /* FDTodoItem.m */; };
+		22A354BE194B29C700732E53 /* FDStandupUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A354BD194B29C700732E53 /* FDStandupUser.m */; };
+		22A354C0194B2D8400732E53 /* mockTeam.json in Resources */ = {isa = PBXBuildFile; fileRef = 22A354BF194B2D8400732E53 /* mockTeam.json */; };
 		56D7E5B6830E4C618623ACFF /* libPods-Standup-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */; };
 		626DFAC130FA46FEA48C9AF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A30D882175455EBC2C4AEC /* libPods.a */; };
 		9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE78CE194B064700E079F0 /* FDLoginViewController.m */; };
@@ -68,6 +71,11 @@
 		22902972194B0AB700D249F7 /* FDStandup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStandup.m; sourceTree = "<group>"; };
 		22902975194B0BD800D249F7 /* FDAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDAPIClient.h; sourceTree = "<group>"; };
 		22902976194B0BD800D249F7 /* FDAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDAPIClient.m; sourceTree = "<group>"; };
+		22A354B9194B296C00732E53 /* FDTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTodoItem.h; sourceTree = "<group>"; };
+		22A354BA194B296C00732E53 /* FDTodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTodoItem.m; sourceTree = "<group>"; };
+		22A354BC194B29C700732E53 /* FDStandupUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDStandupUser.h; sourceTree = "<group>"; };
+		22A354BD194B29C700732E53 /* FDStandupUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDStandupUser.m; sourceTree = "<group>"; };
+		22A354BF194B2D8400732E53 /* mockTeam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockTeam.json; sourceTree = "<group>"; };
 		84C513AE6834405A90E4EC45 /* libPods-Standup-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Standup-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABE78CD194B064700E079F0 /* FDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FDLoginViewController.h; path = ViewControllers/FDLoginViewController.h; sourceTree = "<group>"; };
 		9ABE78CE194B064700E079F0 /* FDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FDLoginViewController.m; path = ViewControllers/FDLoginViewController.m; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 		22527DAC194AFBA0009B989B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22A354BF194B2D8400732E53 /* mockTeam.json */,
 				22527DAD194AFBA0009B989B /* Standup-iOSTests-Info.plist */,
 				22527DAE194AFBA0009B989B /* InfoPlist.strings */,
 			);
@@ -197,6 +206,10 @@
 				2290296F194B0AA900D249F7 /* FDUser.m */,
 				22902971194B0AB700D249F7 /* FDStandup.h */,
 				22902972194B0AB700D249F7 /* FDStandup.m */,
+				22A354B9194B296C00732E53 /* FDTodoItem.h */,
+				22A354BA194B296C00732E53 /* FDTodoItem.m */,
+				22A354BC194B29C700732E53 /* FDStandupUser.h */,
+				22A354BD194B29C700732E53 /* FDStandupUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +290,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = FrostDigital;
 				TargetAttributes = {
+					22527D82194AFBA0009B989B = {
+						DevelopmentTeam = T4EZ537LS6;
+					};
 					22527DA3194AFBA0009B989B = {
 						TestTargetID = 22527D82194AFBA0009B989B;
 					};
@@ -316,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A354C0194B2D8400732E53 /* mockTeam.json in Resources */,
 				22527DB0194AFBA0009B989B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +409,7 @@
 			files = (
 				2290296C194B0A6700D249F7 /* FDTeam.m in Sources */,
 				9ABE78CF194B064700E079F0 /* FDLoginViewController.m in Sources */,
+				22A354BB194B296C00732E53 /* FDTodoItem.m in Sources */,
 				22527D97194AFBA0009B989B /* FDAppDelegate.m in Sources */,
 				22902973194B0AB700D249F7 /* FDStandup.m in Sources */,
 				22527D93194AFBA0009B989B /* main.m in Sources */,
@@ -399,6 +417,7 @@
 				9ABE78D2194B06A500E079F0 /* FDDashboardViewController.m in Sources */,
 				9ABE78D8194B06E200E079F0 /* FDSettingsTableViewController.m in Sources */,
 				9ABE78D5194B06C700E079F0 /* FDStandupTableViewController.m in Sources */,
+				22A354BE194B29C700732E53 /* FDStandupUser.m in Sources */,
 				22902977194B0BD800D249F7 /* FDAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Standup-iOS/Standup-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Standup-iOS/Standup-iOS-Info.plist";
@@ -539,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Standup-iOS/Standup-iOS-Prefix.pch";
 				INFOPLIST_FILE = "Standup-iOS/Standup-iOS-Info.plist";

@@ -1,0 +1,84 @@
+{
+  "teamName": "Frost Stockholm",
+  "users": [
+    {
+      "name": "Joel",
+      "userId": "45cd0a3e-214a-43d8-9d84-eaacf78e9bcd",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "ACTIVE"
+    },
+    {
+      "name": "Nils",
+      "userId": "4f763307b-e96e-48c9-840c-d0346249c901",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "ACTIVE"
+    },
+    {
+      "name": "Josefin",
+      "userId": "dc183846-0722-4be1-af3a-cf23db86a335",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "ACTIVE"
+    },
+    {
+      "name": "Sergii",
+      "userId": "1e38553a-4e26-4aef-abe9-1b3cdd624db2",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "ACTIVE"
+    },
+    {
+      "name": "Toste",
+      "userId": "c9330123-878c-4eef-b95b-3dd9c8fa4bbb",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "ACTIVE"
+    },
+    {
+      "name": "Lina",
+      "userId": "a925673d-e34b-4e1d-bb32-d1d263c91d42",
+      "avatar": "http://placekitten.com/200/200",
+      "state": "INACTIVE"
+    }
+  ],
+  "standups": [
+    {
+      "date": "2014-06-13",
+      "users": [
+        {
+          "userId": "45cd0a3e-214a-43d8-9d84-eaacf78e9bcd",
+          "badge": "",
+          "today": [
+            {
+              "text": "Hackathon!",
+              "completed": false
+            }
+          ],
+          "yesterday": [
+            {
+              "text": "Sanoma utbildning Angular",
+              "completed": true
+            }
+          ]
+        },
+        {
+          "userId": "dc183846-0722-4be1-af3a-cf23db86a335",
+          "badge": "",
+          "today": [
+            {
+              "text": "Hackathon!",
+              "completed": false
+            },
+            {
+              "text": "Köp lunch",
+              "completed": true
+            }
+          ],
+          "yesterday": [
+            {
+              "text": "Hackathon!",
+              "completed": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
